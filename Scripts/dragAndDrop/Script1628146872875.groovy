@@ -17,5 +17,12 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser('http://www.gmail.co.in')
+WebUI.openBrowser('http://www.leafground.com/pages/drop.html')
+
+WebUI.dragAndDropToObject(findTestObject('Object Repository/DragAndDropObjects/Page_TestLeaf - Play with Droppable/source'), 
+    findTestObject('Object Repository/DragAndDropObjects/Page_TestLeaf - Play with Droppable/destinatation'))
+
+String text = WebUI.getText(findTestObject('Object Repository/DragAndDropObjects/Page_TestLeaf - Play with Droppable/destinatation'))
+
+WebUI.verifyEqual(text, "Dropped!")
 
